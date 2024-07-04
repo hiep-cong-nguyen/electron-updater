@@ -1,8 +1,8 @@
 {
-  "name": "electronupdater",
+  "name": "navigo",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron .",
@@ -11,16 +11,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "electron-updater": "^5.3.0",
     "pnpm": "^9.4.0",
-"electron-updater": "^5.3.0"
-
+    "yarn": "^1.22.22"
   },
   "devDependencies": {
     "electron": "^31.1.0",
-     "electron-builder": "^23.6.0"
+    "electron-builder": "^23.6.0"
   },
-
-
   "repository": "https://github.com/hiep-cong-nguyen/electron-updater.git",
   "publish": {
     "provider": "github",
@@ -28,9 +26,17 @@
   },
   "build": {
     "appId": "com.hiepnguyen.autoupdater",
-    "productName": "electronupdater",
+    "productName": "navigo",
     "win": {
-      "target": "nsis"
+      "target": "nsis",
+      "icon": "icon.ico"
+    },
+    "nsis": {
+      "allowToChangeInstallationDirectory": true,
+      "uninstallDisplayName": "navigo-uninstaller",
+      "installerIcon": "icon.ico",
+      "oneClick": false,
+      "license": "license.md"
     },
     "directories": {
       "output": "dist"
